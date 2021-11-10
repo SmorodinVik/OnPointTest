@@ -1,3 +1,10 @@
 import './styles/style.css';
 
-console.log('Hello Viktor!');
+import ReactDOM from 'react-dom';
+import React from 'react';
+
+import App from './App.jsx';
+
+const container = document.querySelector('.slider');
+
+ReactDOM.render(<App />, container);
