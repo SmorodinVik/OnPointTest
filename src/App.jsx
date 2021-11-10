@@ -3,39 +3,40 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [startX, setStartX] = useState(null);
-  const [moveX, setMoveX] = useState(null);
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [startX, setStartX] = useState(0);
   const [currentX, setCurrentX] = useState(0);
   
   const slideCount = 2;
-  const posThreshold = 250;
+  const posThreshold = 350;
   const slideWidth = 1024;
   
   const handleTouchStart = (e) => {
+    console.log(currentX);
     setStartX(e.touches[0].clientX);
   };
   
   const handleTouchMove = (e) => {
-    setMoveX(e.touches[0].clientX);
-
-    const x = currentSlide * -slideWidth - (startX - moveX);
-  
+    const x = currentX - (startX - e.touches[0].clientX);
+    // console.log(x);
+    if (slideIndex === 0 && x > 0 || slideIndex === 2 && x < -slideWidth) {
+      return;
+    }
     setCurrentX(x);
   };
 
-  const handleTouchEnd = () => {
-    if (Math.abs(startX - moveX) > posThreshold) {
-      if (startX > moveX) {
-        const nextSlide = currentSlide < slideCount ? currentSlide + 1 : currentSlide;
-        setCurrentSlide(nextSlide);
+  const handleTouchEnd = (e) => {
+    const finalX = e.changedTouches[0].clientX;
+    if (Math.abs(startX - finalX) > posThreshold) {
+      if (startX > finalX) {
+        const nextSlide = slideIndex < slideCount ? slideIndex + 1 : slideIndex;
+        setSlideIndex(nextSlide);
       } else {
-        const nextSlide = currentSlide === 0 ? currentSlide : currentSlide - 1;
-        setCurrentSlide(nextSlide);
+        const nextSlide = slideIndex === 0 ? slideIndex : slideIndex - 1;
+        setSlideIndex(nextSlide);
       }
     }
-    setCurrentX(-slideWidth * currentSlide);
-    setStartX(null);
+    setCurrentX(slideIndex * -slideWidth);
   };
 
   return (
@@ -51,7 +52,7 @@ const App = () => {
         <div className="slide slide-2">2</div>
         <div className="slide slide-3">3</div>
       </div>
-      <img src="./img/logo.png" alt="logo" className="logo" />
+      <img src="img/img.png" alt="logo" className="logo" />
     </div>
   );
 };
