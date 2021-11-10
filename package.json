@@ -23,6 +23,7 @@
   "type": "module",
   "homepage": "https://github.com/SmorodinVik/OnPointTest#readme",
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
     "@webpack-cli/generators": "^2.4.1",
     "eslint": "^7.32.0",
