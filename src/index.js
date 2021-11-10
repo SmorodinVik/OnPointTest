@@ -1,1 +1,3 @@
-console.log("Hello World!");
+import './styles/style.css';
+
+console.log('Hello Viktor!');
