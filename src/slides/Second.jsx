@@ -1,5 +1,10 @@
 import React from "react";
 
+import sperm1 from '../img/secondslide/sperm1.png';
+import sperm2 from '../img/secondslide/sperm2.png';
+import sperm3 from '../img/secondslide/sperm3.png';
+import sperm4 from '../img/secondslide/sperm4.png';
+
 const Second = () => (
   <div className="slide">
     <div className="content-box">
@@ -34,6 +39,12 @@ const Second = () => (
       </div>
       <div className="background-box" />
     </div>
+
+    <img src={sperm1} className="sperm-1" />
+    <img src={sperm2} className="sperm-2" />
+    <img src={sperm3} className="sperm-3" />
+    <img src={sperm4} className="sperm-4" />
+    <img src={sperm2} className="sperm-5" />
   </div>
 );
 

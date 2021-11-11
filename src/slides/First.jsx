@@ -12,7 +12,7 @@ import bakt6 from '../img/firstslide/bakt6.png';
 import baktbigbottom from '../img/firstslide/baktbigbottom.png';
 
 const First = ({ setSlide }) => (
-  <div className="slide slide-1">
+  <div className="slide">
     <div className="content-box">
       <h3 className="title">привет,</h3>
       <h1>это <strong>не</strong> коммерческое задание</h1>
