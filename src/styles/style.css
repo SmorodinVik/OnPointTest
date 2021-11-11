@@ -19,7 +19,13 @@
 @font-face {
   font-weight: normal;
   font-family: "DINPro";
-  src: url(../fonts/Gilroy-Light.woff) format('woff');
+  src: url(../fonts/DINPro.woff) format('woff');
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "DINPro";
+  src: url(../fonts/DINPro-Bold.woff) format('woff');
 }
 
 html {
@@ -36,7 +42,7 @@ body {
 h1 {
   margin-top: 0;
 
-  font: 95px/1.2 "Giroy", sans-serif;
+  font: 100px/1.2 "Gilroy", sans-serif;
 
   font-weight: lighter;
   letter-spacing: 0.1em;
@@ -80,8 +86,8 @@ h1 {
 }
 
 .btn-next {
-  right: 125px;
-  bottom: 230px;
+  right: 110px;
+  bottom: 210px;
 }
 
 .slider img {
@@ -106,6 +112,8 @@ h1 {
 }
 
 .content-box {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -118,7 +126,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .pink-sperm-1 {
@@ -135,15 +143,15 @@ h1 {
 
 .bakt-1 {
   position: absolute;
-  bottom: 205px;
+  bottom: 185px;
   left: 25px;
   z-index: -1;
 }
 
 .bakt-2 {
   position: absolute;
-  top: 195px;
-  right: 40px;
+  top: 210px;
+  right: 60px;
 }
 
 .bakt-3 {
@@ -177,14 +185,60 @@ h1 {
 }
 
 .message-box {
-  width: 690px;
+  position: relative;
+
+  width: 700px;
   height: 360px;
   
   margin-top: 35px;
-  margin-left: 50px;
-  padding: 20px 30px;
-  border-radius: 50px;
+  margin-left: 0;
+  padding: 0px 80px 30px 70px;
+
+  overflow-x: hidden;
+
+  direction: rtl;
+}
+
+.background-box {
+  position: absolute;
+
+  top: 280px;
+  left: 130px;
+
+  width: 770px;
+  height: 420px;
+
+  border-radius: 30px;
 
   background: #fff;
   box-shadow: 0 0 30px 2px #dad9da;
+
+  z-index: -1;
+}
+
+.background-box::before {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: -53px;
+
+  width: 4px;
+  height: 97%;
+
+  background: black;
+
+  content: '';
+}
+
+.message-box::-webkit-scrollbar {
+ width: 20px;
+}
+
+.message-box::-webkit-scrollbar-thumb {
+  border-radius: 20em;
+  background: no-repeat url('../img/secondslide/thumb.png');
+}
+
+.message-box p {
+  font: 20px/1.5 "DINPro", sans-serif;
 }
