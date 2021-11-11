@@ -1,7 +1,7 @@
 @font-face {
   font-weight: normal;
   font-family: "Gilroy";
-  src: url(../fonts/Gilroy-Regular.woff) format('woff');
+  src: url(../fonts/Gilroy-Regular.woff2) format('woff2');
 }
 
 @font-face {
@@ -14,6 +14,33 @@
   font-weight: lighter;
   font-family: "Gilroy";
   src: url(../fonts/Gilroy-Light.woff) format('woff');
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "DINPro";
+  src: url(../fonts/Gilroy-Light.woff) format('woff');
+}
+
+html {
+  font-family: sans-serif;
+  color: black;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-top: 0;
+
+  font: 95px/1.2 "Giroy", sans-serif;
+
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .slider {
@@ -30,8 +57,24 @@
 
 .logo {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 70px;
+}
+
+.btn {
+  position: absolute;
+  background: none;
+  border: none;
+}
+
+.btn-home {
+  top: 25px;
+  left: 65px;
+}
+
+.btn-next {
+  right: 125px;
+  bottom: 230px;
 }
 
 .slider img {
@@ -39,24 +82,99 @@
 }
 
 .slider-coll {
+  position: relative;
   width: 1024px;
   height: 768px;
   overflow: hidden;
 }
 
 .slides {
+  display: flex;
   width: 3072px;
   background-image: url("../img/background.png");
-  display: flex;
   transition: 2s;
 }
 
 .slide {
+  position: relative;
+
   width: 1024px;
   height: 768px;
 
   display: flex;
   flex-shrink: 0;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-left: 70px;
+  margin-right: 50px;
+}
+
+.greeting {
+  font: 26px "DINPro", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  margin-bottom: 5px;
+}
+
+.pink-sperm-1 {
+  position: absolute;
+  bottom: 30px;
+  left: -50px;
+}
+
+.pink-sperm-2 {
+  position: absolute;
+  top: 165px;
+  right: 0;
+}
+
+.bakt-1 {
+  position: absolute;
+  bottom: 205px;
+  left: 25px;
+  z-index: -1;
+}
+
+.bakt-2 {
+  position: absolute;
+  top: 195px;
+  right: 40px;
+}
+
+.bakt-3 {
+  position: absolute;
+  top: 80px;
+  left: -45px;
+}
+
+.bakt-4 {
+  position: absolute;
+  top: 70px;
+  right: 250px;
+}
+
+.bakt-5 {
+  position: absolute;
+  top: 35px;
+  right: 30px;
+}
+
+.bakt-6 {
+  position: absolute;
+  bottom: 70px;
+  left: 350px;
+}
+
+.bakt-big {
+  position: absolute;
+  right: 260px;
+  bottom: -100px
 }
 
 .slide-1 {

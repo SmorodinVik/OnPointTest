@@ -1,6 +1,9 @@
-//@ts-check
-
 import React, { useState } from "react";
+
+import First from './slides/First.jsx';
+
+import logo from './img/logo.png';
+import homebtn from './img/homebtn.png';
 
 const App = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -48,11 +51,12 @@ const App = () => {
         onTouchEnd={handleTouchEnd}
         style={{ transform: `translate3d(${currentX}px, 0, 0)`}}
       >
-        <div className="slide slide-1"></div>
+        <First />
         <div className="slide slide-2">2</div>
         <div className="slide slide-3">3</div>
       </div>
-      <img src="img/img.png" alt="logo" className="logo" />
+      <img src={logo} alt="logo" className="logo" />
+      <button className="btn btn-home"><img src={homebtn} alt="home button" /></button>
     </div>
   );
 };
