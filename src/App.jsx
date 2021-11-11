@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import First from './slides/First.jsx';
+import Second from './slides/Second.jsx';
 
 import logo from './img/logo.png';
 import homebtn from './img/homebtn.png';
@@ -13,6 +14,12 @@ const App = () => {
   const slideCount = 2;
   const posThreshold = 350;
   const slideWidth = 1024;
+
+  const setSlide = (slideNum) => () => {
+    const index = slideNum - 1;
+    setSlideIndex(index);
+    setCurrentX(index * -slideWidth);
+  };
   
   const handleTouchStart = (e) => {
     console.log(currentX);
@@ -51,12 +58,12 @@ const App = () => {
         onTouchEnd={handleTouchEnd}
         style={{ transform: `translate3d(${currentX}px, 0, 0)`}}
       >
-        <First />
-        <div className="slide slide-2">2</div>
+        <First setSlide={setSlide} />
+        <Second />
         <div className="slide slide-3">3</div>
       </div>
       <img src={logo} alt="logo" className="logo" />
-      <button className="btn btn-home"><img src={homebtn} alt="home button" /></button>
+      <button className="btn btn-home" onClick={setSlide(1)}><img src={homebtn} alt="home button" /></button>
     </div>
   );
 };

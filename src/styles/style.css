@@ -55,6 +55,13 @@ h1 {
   touch-action: pan-y;
 }
 
+.slider-coll {
+  position: relative;
+  width: 1024px;
+  height: 768px;
+  overflow: hidden;
+}
+
 .logo {
   position: absolute;
   bottom: 15px;
@@ -81,13 +88,6 @@ h1 {
   pointer-events: none;
 }
 
-.slider-coll {
-  position: relative;
-  width: 1024px;
-  height: 768px;
-  overflow: hidden;
-}
-
 .slides {
   display: flex;
   width: 3072px;
@@ -105,16 +105,15 @@ h1 {
   flex-shrink: 0;
 }
 
-.title {
+.content-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   text-align: left;
-  margin-left: 70px;
-  margin-right: 50px;
+  padding: 150px 50px 0 70px;
 }
 
-.greeting {
+.title {
   font: 26px "DINPro", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -174,17 +173,18 @@ h1 {
 .bakt-big {
   position: absolute;
   right: 260px;
-  bottom: -100px
+  bottom: -100px;
 }
 
-.slide-1 {
+.message-box {
+  width: 690px;
+  height: 360px;
   
-}
+  margin-top: 35px;
+  margin-left: 50px;
+  padding: 20px 30px;
+  border-radius: 50px;
 
-.slide-2 {
-
-}
-
-.slide-3 {
-
+  background: #fff;
+  box-shadow: 0 0 30px 2px #dad9da;
 }
