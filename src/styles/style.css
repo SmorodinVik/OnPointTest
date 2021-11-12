@@ -303,6 +303,158 @@ h1 {
   z-index: 2;
 }
 
+@-webkit-keyframes bubble1 {
+  from {
+    -webkit-transform: translate(-10%, 0%);
+  }
+  to {
+    -webkit-transform: translate(140%, 30%);
+  }
+}
+
+.bubble-1 {
+  position: absolute;
+  top: 220px;
+  left: 60px;
+
+  -webkit-animation: 'bubble1' 7s infinite alternate ease-in-out;
+
+  z-index: 1;
+}
+
+@-webkit-keyframes bubble2 {
+  from {
+    -webkit-transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+  }
+}
+
+.bubble-2 {
+  position: absolute;
+  bottom: 330px;
+  left: 190px;
+
+  -webkit-animation: 'bubble2' 4s infinite alternate ease-in;
+
+  z-index: 1;
+}
+
+@-webkit-keyframes bubble3 {
+  from {
+    -webkit-transform: translate(-40%, 50%);
+  }
+  to {
+    -webkit-transform: translate(30%, -50%);
+  }
+}
+
+.bubble-3 {
+  position: absolute;
+  top: 70px;
+  left: 200px;
+
+  -webkit-animation: 'bubble3' 4s infinite alternate linear;
+
+  z-index: 1;
+}
+
+@-webkit-keyframes bubble4 {
+  from {
+    -webkit-transform: scale(1) translate(0%, -30%);
+  }
+  to {
+    -webkit-transform: scale(1.2) translate(0%, 30%);
+  }
+}
+
+.bubble-4 {
+  position: absolute;
+  bottom: 130px;
+  left: 250px;
+
+  -webkit-animation: 'bubble4' 5s infinite alternate linear;
+
+  z-index: 1;
+}
+
+@-webkit-keyframes bubble5 {
+  from {
+    -webkit-transform: scale(1) translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: scale(1.2) translate(-50%, 30%);
+  }
+}
+
+.bubble-5 {
+  position: absolute;
+  top: 180px;
+  left: 230px;
+
+  -webkit-animation: 'bubble5' 6s infinite alternate linear;
+
+  z-index: 3;
+}
+
+@-webkit-keyframes bubble6 {
+  from {
+    -webkit-transform: scale(0.8);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+  }
+}
+
+.bubble-6 {
+  position: absolute;
+  bottom: -80px;
+  left: 200px;
+
+  -webkit-animation: 'bubble6' 3s infinite alternate linear;
+
+  z-index: 3;
+}
+
+@-webkit-keyframes bubble7 {
+  from {
+    -webkit-transform: translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: translate(-30%, -60%);
+  }
+}
+
+.bubble-7 {
+  position: absolute;
+  bottom: 300px;
+  left: 30px;
+
+  -webkit-animation: 'bubble7' 3s infinite alternate ease-in;
+
+  z-index: 3;
+}
+
+@-webkit-keyframes bubble8 {
+  from {
+    -webkit-transform: scale(1) translate(0%, 0%);
+  }
+  to {
+    -webkit-transform: scale(1.1) translate(30%, 10%);
+  }
+}
+
+.bubble-8 {
+  position: absolute;
+  bottom: 150px;
+  left: 25px;
+
+  -webkit-animation: 'bubble8' 3s infinite alternate ease-in;
+
+  z-index: 3;
+}
+
 .keymessage-box {
   position: relative;
   margin-top: 180px;

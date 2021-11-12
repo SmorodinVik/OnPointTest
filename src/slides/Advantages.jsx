@@ -23,8 +23,8 @@ const Advantages = ({ setPageOpen }) => {
 
   const renderAdvList = (pageNum) => pageContent[pageNum]
     .map((el, i) => (
-      <div key={i + 1}>
-        <span className="item-number">{`0${i + 1}`}</span>
+      <div key={i + pageNum * pageNum}>
+        <span className="item-number">{`0${i + pageNum * pageNum}`}</span>
         <p>{el}</p>
       </div>
     ));
