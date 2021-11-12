@@ -13,8 +13,8 @@ import baktbigbottom from '../img/firstslide/baktbigbottom.png';
 
 const First = ({ setSlide }) => (
   <div className="slide">
-    <div className="content-box">
-      <h3 className="title">привет,</h3>
+    <div className="content-box padding-top-155">
+      <h3 className="title margin-bottom-10">привет,</h3>
       <h1>это <strong>не</strong> коммерческое задание</h1>
     </div>
     <button className="btn btn-next" onClick={setSlide(2)}><img src={nextbtn} alt="next page" /></button>
