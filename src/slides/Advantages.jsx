@@ -17,17 +17,17 @@ const pageContent = {
   ],
 };
 
-const Advantages = ({ setPageOpen }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const pageIndicatorStyle = currentPage === 2 ? { transform: 'scale(-1, 1)' } : null;
-
-  const renderAdvList = (pageNum) => pageContent[pageNum]
+const renderAdvList = (pageNum) => pageContent[pageNum]
     .map((el, i) => (
       <div key={i + pageNum * pageNum}>
         <span className="item-number">{`0${i + pageNum * pageNum}`}</span>
         <p>{el}</p>
       </div>
     ));
+
+const Advantages = ({ setPageOpen }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageIndicatorStyle = currentPage === 2 ? { transform: 'scale(-1, 1)' } : null;
 
   return (
     <div className="background-dark">

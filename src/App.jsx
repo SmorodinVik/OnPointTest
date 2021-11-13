@@ -13,7 +13,7 @@ const App = () => {
   const [currentX, setCurrentX] = useState(0);
 
   const slideCount = 2;
-  const posThreshold = 150;
+  const posThreshold = 250;
   const slideWidth = 1024;
 
   const setSlide = (slideNum) => () => {
@@ -23,13 +23,11 @@ const App = () => {
   };
 
   const handleTouchStart = (e) => {
-    console.log(currentX);
     setStartX(e.touches[0].clientX);
   };
 
   const handleTouchMove = (e) => {
     const x = currentX - (startX - e.touches[0].clientX);
-    // console.log(x);
     if (slideIndex === 0 && x > 0 || slideIndex === 2 && x < -slideWidth) {
       return;
     }

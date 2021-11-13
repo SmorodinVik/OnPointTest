@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Keymessage from './Keymessage.jsx';
-import Advantages from "./Advantages.jsx";
+import Advantages from './Advantages.jsx';
 
 import bottle from '../img/thirdslide/bottle.png';
 import bubble1 from '../img/thirdslide/bubble1.png';

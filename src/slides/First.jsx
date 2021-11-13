@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import nextbtn from '../img/firstslide/nextbtn.png';
 import pinksperm1 from '../img/firstslide/pinksperm1.png';
@@ -21,13 +21,13 @@ const First = ({ setSlide }) => (
 
     <img src={pinksperm1} className="pink-sperm-1" />
     <img src={pinksperm2} className="pink-sperm-2" />
-    <img src={bakt1} className="bakt-1" />
-    <img src={bakt2} className="bakt-2" />
-    <img src={bakt3} className="bakt-3" />
-    <img src={bakt4} className="bakt-4" />
-    <img src={bakt5} className="bakt-5" />
-    <img src={bakt6} className="bakt-6" />
-    <img src={baktbigbottom} className="bakt-big" />
+    <img src={bakt1} className="bakt-1" alt="bakteria" />
+    <img src={bakt2} className="bakt-2" alt="bakteria" />
+    <img src={bakt3} className="bakt-3" alt="bakteria" />
+    <img src={bakt4} className="bakt-4" alt="bakteria" />
+    <img src={bakt5} className="bakt-5" alt="bakteria" />
+    <img src={bakt6} className="bakt-6" alt="bakteria" />
+    <img src={baktbigbottom} className="bakt-big" alt="bakteria" />
   </div>
 );
 
