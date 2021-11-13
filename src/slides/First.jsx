@@ -17,7 +17,7 @@ const First = ({ setSlide }) => (
       <h3 className="title margin-bottom-10">привет,</h3>
       <h1>это <strong>не</strong> коммерческое задание</h1>
     </div>
-    <button className="btn btn-next" onClick={setSlide(2)}><img src={nextbtn} alt="next page" /></button>
+    <button className="btn btn-next" onClick={setSlide(1)}><img src={nextbtn} alt="next page" /></button>
 
     <img src={pinksperm1} className="pink-sperm-1" />
     <img src={pinksperm2} className="pink-sperm-2" />

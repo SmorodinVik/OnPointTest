@@ -8,61 +8,62 @@ import logo from './img/logo.png';
 import homebtn from './img/homebtn.png';
 
 const App = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [startX, setStartX] = useState(0);
   const [currentX, setCurrentX] = useState(0);
 
-  const slideCount = 2;
-  const posThreshold = 250;
+  const slideMaxIndex = 2;
   const slideWidth = 1024;
+  const posThreshold = 100;
 
-  const setSlide = (slideNum) => () => {
-    const index = slideNum - 1;
-    setSlideIndex(index);
-    setCurrentX(index * -slideWidth);
+  const setSlide = (slideIndex) => () => {
+    setCurrentSlideIndex(slideIndex);
+    setCurrentX(slideIndex * -slideWidth);
   };
 
-  const handleTouchStart = (e) => {
+  const handleSwipeStart = (e) => {
     setStartX(e.touches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleSwipeMove = (e) => {
     const x = currentX - (startX - e.touches[0].clientX);
-    if (slideIndex === 0 && x > 0 || slideIndex === 2 && x < -slideWidth) {
+    if (currentSlideIndex === 0 && x > 0 || currentSlideIndex === slideMaxIndex && x < -slideWidth) {
       return;
     }
     setCurrentX(x);
   };
 
-  const handleTouchEnd = (e) => {
+  const handleSwipeEnd = (e) => {
     const finalX = e.changedTouches[0].clientX;
+
+    let nextSlideIndex;
+  
     if (Math.abs(startX - finalX) > posThreshold) {
       if (startX > finalX) {
-        const nextSlide = slideIndex < slideCount ? slideIndex + 1 : slideIndex;
-        setSlideIndex(nextSlide);
+        nextSlideIndex = currentSlideIndex < slideMaxIndex ? currentSlideIndex + 1 : currentSlideIndex;
       } else {
-        const nextSlide = slideIndex === 0 ? slideIndex : slideIndex - 1;
-        setSlideIndex(nextSlide);
+        nextSlideIndex = currentSlideIndex === 0 ? currentSlideIndex : currentSlideIndex - 1;
       }
+      setCurrentSlideIndex(nextSlideIndex);
     }
-    setCurrentX(slideIndex * -slideWidth);
+    setCurrentX(nextSlideIndex * -slideWidth);
   };
 
   return (
     <div className="slider-coll">
       <div
         className="slides" 
-        onTouchMove={handleTouchMove}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        style={{ transform: `translate3d(${currentX}px, 0, 0)`}}
+        onTouchMove={handleSwipeMove}
+        onTouchStart={handleSwipeStart}
+        onTouchEnd={handleSwipeEnd}
+        style={{ transform: `translate(${currentX}px, 0)`}}
       >
         <First setSlide={setSlide} />
         <Second />
         <Third />
       </div>
       <img src={logo} alt="logo" className="logo" />
-      <button className="btn btn-home" onClick={setSlide(1)}><img src={homebtn} alt="home button" /></button>
+      <button className="btn btn-home" onClick={setSlide(0)}><img src={homebtn} alt="home button" /></button>
     </div>
   );
 };
