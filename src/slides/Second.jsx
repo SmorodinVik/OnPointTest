@@ -7,7 +7,7 @@ import sperm4 from '../img/secondslide/sperm4.png';
 
 const Second = ({ currentSlideIndex }) => {
   const imgStyle = currentSlideIndex === 1
-    ? { WebkitAnimation: `'sperm' 3s 1 normal ease-out` }
+    ? { WebkitAnimation: `'sperm' 2s 1 normal ease-out` }
     : null;
 
   return (

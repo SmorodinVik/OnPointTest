@@ -56,6 +56,8 @@ h1 {
 
   margin: 0;
 
+  cursor: grab;
+
   user-select: none;
   touch-action: pan-y;
 }
@@ -77,6 +79,8 @@ h1 {
   position: absolute;
   background: none;
   border: none;
+
+  cursor: pointer;
 }
 
 .btn-home {
