@@ -625,7 +625,7 @@ h1 {
   width: 100%;
   background: #16273e;
 
-  -webkit-animation: 'bg-opacity' 1s 1 alternate linear;
+  -webkit-animation: 'bg-opacity' 500ms 1 alternate linear;
 
   opacity: 0.7;
 }
