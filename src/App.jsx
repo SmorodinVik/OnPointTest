@@ -29,11 +29,12 @@ const App = () => {
   };
 
   const handleSwipeMove = (e) => {
-    const evt = e.clientX ? e : e.touches[0];
-    let x = currentX - (startX - evt.clientX);
-  
     if (!mouseDown) return;
 
+    const evt = e.clientX ? e : e.touches[0];
+
+    let x = currentX - (startX - evt.clientX);
+  
     if (x > 0) {
       x = 0;
     }
@@ -42,26 +43,27 @@ const App = () => {
       x = -slideWidth * slideMaxIndex;
     }
   
-    if (currentSlideIndex === 0 && x > 0 || currentSlideIndex === slideMaxIndex && x < -slideWidth) {
+    if ((currentSlideIndex === 0 && x > 0) || (currentSlideIndex === slideMaxIndex && x < -slideWidth * slideMaxIndex)) {
       return;
     }
+
     setCurrentX(x);
   };
 
   const handleSwipeEnd = (e) => {
     const finalX = e.clientX || e.changedTouches[0].clientX;
 
-    let nextSlideIndex;
+    let nextSlideIndex = currentSlideIndex;
   
     if (Math.abs(startX - finalX) > posThreshold) {
       if (startX > finalX) {
         nextSlideIndex = currentSlideIndex < slideMaxIndex ? currentSlideIndex + 1 : currentSlideIndex;
-      } else {
+      } else if (startX <= finalX) {
         nextSlideIndex = currentSlideIndex === 0 ? currentSlideIndex : currentSlideIndex - 1;
       }
-      setCurrentSlideIndex(nextSlideIndex);
     }
-  
+
+    setCurrentSlideIndex(nextSlideIndex);
     setCurrentX(nextSlideIndex * -slideWidth);
     setMouseDown(false);
   };

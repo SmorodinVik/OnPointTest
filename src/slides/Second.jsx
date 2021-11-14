@@ -70,6 +70,7 @@ const Second = ({ currentSlideIndex }) => {
           quam nulla porttitor massa
         </p>
       </div>
+      <div className="inner-shadow-box" />
       <div className="background-box" />
     </div>
 

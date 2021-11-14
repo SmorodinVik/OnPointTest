@@ -256,7 +256,7 @@ h1 {
   position: relative;
 
   width: 700px;
-  height: 360px;
+  height: 380px;
   
   margin-top: 55px;
   margin-left: 0;
@@ -265,6 +265,10 @@ h1 {
   overflow-x: hidden;
 
   direction: rtl;
+}
+
+.message-box p {
+  font: 20px/1.5 "DINPro", sans-serif;
 }
 
 .background-box {
@@ -282,6 +286,22 @@ h1 {
   box-shadow: 0 0 30px 2px #dad9da;
 
   z-index: -1;
+}
+
+.inner-shadow-box {
+  position: absolute;
+
+  top: 265px;
+  left: 130px;
+
+  width: 770px;
+  height: 425px;
+
+  border-radius: 30px;
+
+  box-shadow: inset 0 -40px 20px -5px #fff;
+
+  z-index: 1;
 }
 
 .background-box::before {
@@ -305,10 +325,6 @@ h1 {
 .message-box::-webkit-scrollbar-thumb {
   border-radius: 20em;
   background: no-repeat url('../img/secondslide/thumb.png');
-}
-
-.message-box p {
-  font: 20px/1.5 "DINPro", sans-serif;
 }
 
 @-webkit-keyframes sperm {
