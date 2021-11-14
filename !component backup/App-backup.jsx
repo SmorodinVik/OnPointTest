@@ -59,7 +59,7 @@ const App = () => {
         style={{ transform: `translate(${currentX}px, 0)`}}
       >
         <First setSlide={setSlide} />
-        <Second currentSlideIndex={currentSlideIndex} />
+        <Second />
         <Third />
       </div>
       <img src={logo} alt="logo" className="logo" />

@@ -1,6 +1,7 @@
 node_modules
 coverage
 dist
+!component backup
 .vscode
 .DS_Store
 .vercel

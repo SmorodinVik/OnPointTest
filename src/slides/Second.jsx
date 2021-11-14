@@ -5,8 +5,13 @@ import sperm2 from '../img/secondslide/sperm2.png';
 import sperm3 from '../img/secondslide/sperm3.png';
 import sperm4 from '../img/secondslide/sperm4.png';
 
-const Second = () => (
-  <div className="slide">
+const Second = ({ currentSlideIndex }) => {
+  const imgStyle = currentSlideIndex === 1
+    ? { WebkitAnimation: `'sperm' 3s 1 normal ease-out` }
+    : null;
+
+  return (
+    <div className="slide">
     <div className="content-box">
       <h3 className="title">текст<br />сообщения</h3>
       <div className="message-box">
@@ -68,12 +73,13 @@ const Second = () => (
       <div className="background-box" />
     </div>
 
-    <img src={sperm1} className="sperm-1" alt="sprem" />
-    <img src={sperm2} className="sperm-2" alt="sprem" />
-    <img src={sperm3} className="sperm-3" alt="sprem" />
-    <img src={sperm4} className="sperm-4" alt="sprem" />
-    <img src={sperm2} className="sperm-5" alt="sprem" />
+    <img src={sperm1} style={imgStyle} className="sperm-1" alt="sprem" />
+    <img src={sperm2} style={imgStyle} className="sperm-2" alt="sprem" />
+    <img src={sperm3} style={imgStyle} className="sperm-3" alt="sprem" />
+    <img src={sperm4} style={imgStyle} className="sperm-4" alt="sprem" />
+    <img src={sperm2} style={imgStyle} className="sperm-5" alt="sprem" />
   </div>
-);
+  );
+};
 
 export default Second;
