@@ -60,7 +60,7 @@ const App = () => {
     if (Math.abs(startX - finalX) > posThreshold) {
       if (startX > finalX) {
         nextSlideIndex = currentSlideIndex < slideMaxIndex ? currentSlideIndex + 1 : currentSlideIndex;
-      } else if (startX <= finalX) {
+      } else {
         nextSlideIndex = currentSlideIndex === 0 ? currentSlideIndex : currentSlideIndex - 1;
       }
     }
