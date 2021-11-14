@@ -30,9 +30,17 @@ const App = () => {
 
   const handleSwipeMove = (e) => {
     const evt = e.clientX ? e : e.touches[0];
-    const x = currentX - (startX - evt.clientX);
+    let x = currentX - (startX - evt.clientX);
   
     if (!mouseDown) return;
+
+    if (x > 0) {
+      x = 0;
+    }
+
+    if (x < -slideWidth * slideMaxIndex) {
+      x = -slideWidth * slideMaxIndex;
+    }
   
     if (currentSlideIndex === 0 && x > 0 || currentSlideIndex === slideMaxIndex && x < -slideWidth) {
       return;
