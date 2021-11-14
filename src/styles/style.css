@@ -611,9 +611,21 @@ h1 {
   z-index: -1;
 }
 
+@-webkit-keyframes bg-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
 .background-dark {
   width: 100%;
   background: #16273e;
+
+  -webkit-animation: 'bg-opacity' 700ms 1 alternate linear;
+
   opacity: 0.7;
 }
 
@@ -628,8 +640,9 @@ h1 {
   padding-top: 20px;
   padding-left: 190px;
 
-  border-radius: 40px;
+  opacity: 1;
 
+  border-radius: 40px;
   background: #fff;
 }
 
