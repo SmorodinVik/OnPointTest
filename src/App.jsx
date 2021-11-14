@@ -33,7 +33,7 @@ const App = () => {
 
     const evt = e.clientX ? e : e.touches[0];
 
-    const diff = Math.abs(startX - evt.clientX) < 20 ? 0 : (startX - evt.clientX);
+    const diff = Math.abs(startX - evt.clientX) < 40 ? 0 : (startX - evt.clientX);
 
     let x = currentX - diff;
   
