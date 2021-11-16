@@ -18,7 +18,7 @@ const Third = () => {
 
   return (
     <div className="slide">
-      <h2 className="brand-name">brend<strong>xy</strong></h2>
+      <h2 className="brand-name">brand<strong>xy</strong></h2>
       {
         pageOpen === 'keymessage'
         ? <Keymessage setPageOpen={setPageOpen} />
